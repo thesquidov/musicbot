@@ -1,6 +1,8 @@
 const config = require('./config.js');
 require("./bot.js");
 
+const statusMessages = ["Вступай в Lawrence famq💫"];
+
 /*
 
   ________.__                        _____.___.___________
