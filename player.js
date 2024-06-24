@@ -38,15 +38,15 @@ function initializePlayer(client) {
         const embed = new EmbedBuilder()
             .setColor("#0099ff")
             .setAuthor({
-                name: 'Now Playing',
+                name: 'Сейчас играет',
                 iconURL: 'https://cdn.discordapp.com/attachments/1230824451990622299/1236664581364125787/music-play.gif?ex=6638d524&is=663783a4&hm=5179f7d8fcd18edc1f7d0291bea486b1f9ce69f19df8a96303b75505e18baa3a&',
-                url: 'https://discord.gg/xQF9f9yUEM'
+                url: ''
             })
-            .setDescription(`➡️ **Song Name:** [${track.info.title}](${track.info.uri})\n➡️ **Author:** ${track.info.author}\n➡️ **Platforms :** YouTube, Spotify, SoundCloud`)
+            .setDescription(`➡️ **Название этой невъебической песни:** [${track.info.title}](${track.info.uri})\n➡️ **Автор:** ${track.info.author}\n➡️ **Платформы :** YouTube, Spotify, SoundCloud`)
             .setImage(`https://cdn.discordapp.com/attachments/1004341381784944703/1165201249331855380/RainbowLine.gif?ex=663939fa&is=6637e87a&hm=e02431de164b901e07b55d8f8898ca5b1b2832ad11985cecc3aa229a7598d610&`)
             .setThumbnail(track.info.thumbnail)
             .setTimestamp()
-            .setFooter({ text: 'Click below buttons to control playback!' });
+            .setFooter({ text: 'Кликай на кнопки ниже для управления' });
 
 
         const queueLoopButton = new ButtonBuilder()
@@ -103,12 +103,12 @@ function initializePlayer(client) {
                 setLoop(player, 'queue');
                 const loopEmbed = new EmbedBuilder()
                     .setAuthor({
-                        name: 'Queue Loop!',
+                        name: 'Цикл очереди',
                         iconURL: 'https://cdn.discordapp.com/attachments/1156866389819281418/1157318080670728283/7905-repeat.gif?ex=66383bb4&is=6636ea34&hm=65f37cf88245f1c09285b547fda57b82828b3bbcda855e184f446d6ff43756b3&',
-                        url: 'https://discord.gg/xQF9f9yUEM'
+                        url: ''
                     })
                     .setColor("#00FF00")
-                    .setTitle("**Queue loop is Activated!**")
+                    .setTitle("**Активирован цикл очереди**")
 
 
                 await channel.send({ embeds: [loopEmbed] });
@@ -117,11 +117,11 @@ function initializePlayer(client) {
                 const skipEmbed = new EmbedBuilder()
                     .setColor('#3498db')
                     .setAuthor({
-                        name: 'Song Skipped',
+                        name: 'Песня скипнута',
                         iconURL: 'https://cdn.discordapp.com/attachments/1156866389819281418/1157269773118357604/giphy.gif?ex=6517fef6&is=6516ad76&hm=f106480f7d017a07f75d543cf545bbea01e9cf53ebd42020bd3b90a14004398e&',
-                        url: 'https://discord.gg/FUEHs7RCqz'
+                        url: ''
                     })
-                    .setTitle("**Player will play the next song!**")
+                    .setTitle("**Ща начнёт играть новая невъебическая песенка, готовьтесь Лоуренсы**")
                     .setTimestamp();
 
 
@@ -131,11 +131,11 @@ function initializePlayer(client) {
                 const loopEmbed = new EmbedBuilder()
                     .setColor("#0099ff")
                     .setAuthor({
-                        name: 'Looping Off',
+                        name: 'Цикл выключен',
                         iconURL: 'https://cdn.discordapp.com/attachments/1230824451990622299/1230836684774576168/7762-verified-blue.gif?ex=6638b97d&is=663767fd&hm=021725868cbbc66f35d2b980585489f93e9fd366aa57640732dc49e7da9a80ee&',
-                        url: 'https://discord.gg/xQF9f9yUEM'
+                        url: ''
                     })
-                    .setDescription('**Loop is Disabled for queue and single Song!**');
+                    .setDescription('**Цикл отключен для очереди и отдельной песни!**');
                     
 
                     await channel.send({ embeds: [loopEmbed] });
@@ -170,11 +170,11 @@ function initializePlayer(client) {
                     const queueEmbed = new EmbedBuilder()
                         .setColor("#0099ff")
                         .setAuthor({
-                            name: 'Queue Cleared',
+                            name: 'Очередь очищена',
                             iconURL: 'https://cdn.discordapp.com/attachments/1230824451990622299/1230836684774576168/7762-verified-blue.gif?ex=6638b97d&is=663767fd&hm=021725868cbbc66f35d2b980585489f93e9fd366aa57640732dc49e7da9a80ee&',
-                            url: 'https://discord.gg/xQF9f9yUEM'
+                            url: ''
                         })
-                        .setDescription('**Queue Songs cleared successfully!**');
+                        .setDescription('**Пошла нахуй эта очередь, слушайте только мои треки, я чсв**');
     
     
                     await channel.send({ embeds: [queueEmbed] });
@@ -196,7 +196,7 @@ function initializePlayer(client) {
                 player.destroy();
                 const queueEmbed = new EmbedBuilder()
                     .setColor("#0099ff")
-                    .setDescription('**Queue Songs ended! Disconnecting Bot!**');
+                    .setDescription('**Треки в очереди закончились и поэтому бот пошёл по съёбам**');
     
     
                 await channel.send({ embeds: [queueEmbed] });
